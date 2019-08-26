@@ -159,7 +159,7 @@ class WordPunctuationTokenizer(object):
     # tokenizer splits on punctuation or whitespace
     def tokenize(self, contents):
         # whitespace is kept with whatever precedes it
-        return re.findall(r'\w+\s*|\W+', contents)
+        return re.findall(r'''[\w'"]+\s*|[\W"']+''', contents)
 
 
 class Token(object):
