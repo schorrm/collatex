@@ -156,10 +156,10 @@ def visualizeTableVertically(table):
 
 
 class WordPunctuationTokenizer(object):
-    # tokenizer splits on punctuation or whitespace
+    # tokenizer splits on whitespace only -- changed!
     def tokenize(self, contents):
         # whitespace is kept with whatever precedes it
-        return re.findall(r'''[\w'˙"]+\s*|[\W"˙']+''', contents)
+        return re.findall(r'''\S+\s*|\S+''', contents)
 
 
 class Token(object):
